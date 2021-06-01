@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.hec">
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="whateverString"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
+        tools:replace="android:appComponentFactory">
+        <activity android:name=".sign_up" />
+        <activity
+            android:name=".login"
+            android:label="@string/app_name"
+            android:screenOrientation="fullSensor">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".choose" />
+        <activity android:name=".Sasang_Survey.sex_Survey" />
+        <activity android:name=".Sasang_Survey.Survey_1" />
+        <activity android:name=".Sasang_Survey.Survey_2" />
+        <activity android:name=".Sasang_Survey.Survey_3" />
+        <activity android:name=".Sasang_Survey.Survey_4" />
+        <activity android:name=".Sasang_Survey.Survey_5" />
+        <activity android:name=".Sasang_Survey.Survey_6" />
+        <activity android:name=".Sasang_Survey.Survey_7" />
+        <activity android:name=".Sasang_Survey.Survey_8" />
+        <activity android:name=".Sasang_Survey.Survey_9" />
+        <activity android:name=".Sasang_Survey.Survey_10" />
+        <activity android:name=".Sasang_Survey.Survey_11" />
+        <activity android:name=".Sasang_Survey.Survey_12" />
+        <activity android:name=".Sasang_Survey.Survey_13" />
+        <activity android:name=".Sasang_Survey.Survey_14" />
+        <activity android:name=".Sasang_result" />
+        <activity android:name=".Inbody.inbody_survey1" />
+        <activity android:name=".Inbody.inbody_survey2"/>
+    </application>
+
+</manifest>

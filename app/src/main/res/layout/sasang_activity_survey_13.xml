@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginTop="50sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:text="사상체질 설문조사"
+        android:textSize="20sp"
+        android:gravity="center">
+
+    </TextView>
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="평소 추위, 더위 중 어느 것이 더 싫은 가요?"
+        android:textSize="30dp"
+        android:textColor="@color/sky"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/btn_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sky"
+        android:text="추위"
+        android:layout_marginBottom="15sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="20dp"
+        android:onClick="onclick"
+        >
+
+    </Button>
+    <Button
+        android:id="@+id/btn_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sky"
+        android:text="더위"
+        android:layout_marginBottom="15sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="20dp"
+        android:onClick="onclick"
+        >
+
+    </Button>
+    <Button
+        android:id="@+id/btn_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sky"
+        android:text="모두 싫거나 모두 괜찮다."
+        android:layout_marginBottom="15sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="20dp"
+        android:onClick="onclick"
+        >
+
+    </Button>
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15sp"
+        android:layout_gravity="center"
+        android:background="@drawable/sky"
+        android:text="Next"
+        >
+    </Button>
+</LinearLayout>

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginTop="50sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:text="체성분 설문조사"
+        android:textSize="20sp"
+        android:gravity="center">
+
+    </TextView>
+    <TextView
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="35dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:text="저녁식사 때 어떤 음식을 먹고 난 후에 숙면을 취할 수 있습니까?"
+        android:textSize="28dp"
+        android:textColor="@color/sky"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+    </TextView>
+
+    <Button
+        android:id="@+id/inbody_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sky"
+        android:text="채소,탄수화물,단백질을 골고루 섭취했을 경우"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="18dp"
+        android:onClick="onclick"
+        >
+
+    </Button>
+    <Button
+        android:id="@+id/inbody_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sky"
+        android:text="저탄수화물 고단백 위주의 식사를 했을 경우"
+        android:layout_marginBottom="15sp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textSize="18dp"
+        android:onClick="onclick"
+        >
+
+    </Button>
+
+    <Button
+        android:id="@+id/inbody_next"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
+        android:layout_gravity="center"
+        android:background="@drawable/sky"
+        android:text="Next"
+        >
+    </Button>
+</LinearLayout>

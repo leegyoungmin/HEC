@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="200dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:text="사용할 데이터를 모두 골라주세요.">
+
+    </TextView>
+    <CheckedTextView
+        android:id="@+id/checkbox_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+        android:textSize="20dp"
+        android:text="사상체질"
+        android:checkMarkTint="@color/sky"
+        android:clickable="true">
+
+    </CheckedTextView>
+
+    <CheckedTextView
+        android:id="@+id/checkbox_2"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+        android:textSize="20dp"
+        android:text="인바디"
+        android:checkMarkTint="@color/sky"
+        android:clickable="true">
+
+    </CheckedTextView>
+
+    <CheckedTextView
+        android:layout_marginTop="20dp"
+        android:id="@+id/checkbox_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:checkMark="?android:attr/listChoiceIndicatorMultiple"
+        android:checkMarkTint="@color/sky"
+        android:textSize="20dp"
+        android:text="질병"
+        android:clickable="true">
+
+    </CheckedTextView>
+    <Button
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="조사 시작"
+        android:textSize="20dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:gravity="center"
+        android:background="@drawable/sky"
+
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center">
+
+    </Button>
+
+</LinearLayout>
