@@ -20,7 +20,7 @@ public class Survey_1 extends AppCompatActivity {
     HashMap<String,Integer> result= new HashMap();
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.Sasang_activity_survey_1);
+        setContentView(R.layout.sasang_activity_survey_1);
 
         btn_1=(Button)findViewById(R.id.btn_1);
         btn_2=(Button)findViewById(R.id.btn_2);

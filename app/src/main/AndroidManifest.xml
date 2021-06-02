@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
         tools:replace="android:appComponentFactory">
-        <activity android:name=".sign_up" />
+
         <activity
             android:name=".login"
             android:label="@string/app_name"
@@ -26,6 +26,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".sign_up" />
         <activity android:name=".choose" />
         <activity android:name=".Sasang_Survey.sex_Survey" />
         <activity android:name=".Sasang_Survey.Survey_1" />
