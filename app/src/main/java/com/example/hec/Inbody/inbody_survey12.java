@@ -12,7 +12,7 @@ import com.example.hec.R;
 
 import java.util.HashMap;
 
-public class inbody_survey2 extends AppCompatActivity {
+public class inbody_survey12 extends AppCompatActivity {
 
     Button btn_1,btn_2,next;
     int value;
@@ -21,10 +21,8 @@ public class inbody_survey2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.inbody_activity_survey2);
-
+        setContentView(R.layout.inbody_activity_survey12);
         inbody_result= (HashMap<String, Integer>) getIntent().getSerializableExtra("inbody_result");
-
         btn_1=(Button)findViewById(R.id.inbody_1);
         btn_2=(Button)findViewById(R.id.inbody_2);
         next=(Button)findViewById(R.id.inbody_next);
@@ -61,9 +59,9 @@ public class inbody_survey2 extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                inbody_result.put("answer2",value);
+                inbody_result.put("answer12",value);
 
-                Intent intent = new Intent(getApplicationContext(), inbody_survey3.class);
+                Intent intent = new Intent(getApplicationContext(), inbody_survey13.class);
                 intent.putExtra("result",inbody_result);
                 startActivity(intent);
 

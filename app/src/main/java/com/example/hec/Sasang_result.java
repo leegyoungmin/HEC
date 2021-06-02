@@ -20,8 +20,9 @@ public class Sasang_result extends AppCompatActivity {
     Button next;
     int sex;
     double te_score, se_score, sy_score;
-    HashMap type = new HashMap();
     ArrayList<Double> survey_result;
+    Boolean ib = ((choose)choose.context_choose).ib;
+    Boolean ds = ((choose)choose.context_choose).ds;
 
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -31,16 +32,14 @@ public class Sasang_result extends AppCompatActivity {
         textview = findViewById(R.id.text1);
         next=findViewById(R.id.next_survey);
 
-        sex = getIntent().getIntExtra("sex", 1);
 
+        sex = getIntent().getIntExtra("sex", 1);
         result = (HashMap) getIntent().getSerializableExtra("result");
-        type=(HashMap<String,Boolean>) getIntent().getSerializableExtra("type");
-        Log.i("type_1", String.valueOf(type));
-        textview.setText(String.valueOf(result));
+
         survey_result= result_cal(result);
 
-
-        Log.i("result_type", String.valueOf(type));
+        Log.i("ib", String.valueOf(ib));
+        Log.i("ds_data", String.valueOf(ds));
 
         for(int i=0; i<4;i++){
             Log.i("survey_result", String.valueOf(survey_result.get(i)));
@@ -48,16 +47,20 @@ public class Sasang_result extends AppCompatActivity {
 
         Log.i("data", String.valueOf(result.keySet()));
         Log.i("data_result", String.valueOf(result_cal(result)));
-        Log.i("type", String.valueOf(type));
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                if(ib==true){
+                    Intent intent = new Intent(getApplicationContext(),inbody_survey1.class);
+                    startActivity(intent);
+                }
+                else if(ds==true){
+                    Intent intent = new Intent(getApplicationContext(),inbody_survey1.class);
+                    startActivity(intent);
+                }
             }
         });
-
-
     }
     private ArrayList result_cal(HashMap result) {
         ArrayList<Double> result_sasang = new ArrayList<Double>();

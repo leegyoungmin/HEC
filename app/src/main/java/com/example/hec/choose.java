@@ -1,5 +1,7 @@
 package com.example.hec;
 
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -17,18 +19,19 @@ import java.util.HashMap;
 public class choose extends AppCompatActivity {
 
     CheckedTextView ckbox1,ckbox2,ckbox3;
-    HashMap<String, Boolean> type = new HashMap();
+    public Boolean ss,ib,ds;
+    public static Context context_choose;
     Button next;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose);
+        context_choose = this;
 
-        Intent result=getIntent();
-
-        type.put("sasang",false);
-        type.put("inbody",false);
-        type.put("disease",false);
+        Intent intent = getIntent();
+        ss=false;
+        ib=false;
+        ds=false;
 
         ckbox1=(CheckedTextView) findViewById(R.id.checkbox_1);
         ckbox1.setOnClickListener(new View.OnClickListener() {
@@ -36,11 +39,11 @@ public class choose extends AppCompatActivity {
             public void onClick(View v) {
                 if(ckbox1.isChecked()){
                     ckbox1.setChecked(false);
-                    type.put("sasang",false);
+                    ss=false;
                 }
                 else if(!ckbox1.isChecked()){
                     ckbox1.setChecked(true);
-                    type.put("sasang",true);
+                    ss=true;
                 }
             }
         });
@@ -52,16 +55,15 @@ public class choose extends AppCompatActivity {
             public void onClick(View v) {
                 if(ckbox2.isChecked()){
                     ckbox2.setChecked(false);
-                    type.put("inbody",false);
+                    ib=false;
                 }
                 else if(!ckbox2.isChecked()){
                     ckbox2.setChecked(true);
-                    type.put("inbody",true);
+                    ib=true;
                 }
             }
 
         });
-        Log.i("inbody", String.valueOf(type));
         ckbox3= (CheckedTextView) findViewById(R.id.checkbox_3);
         ckbox3.setOnClickListener(new View.OnClickListener(){
 
@@ -69,44 +71,38 @@ public class choose extends AppCompatActivity {
             public void onClick(View v) {
                 if(ckbox3.isChecked()){
                     ckbox3.setChecked(false);
-                    type.put("disease",false);
+                    ds=false;
                 }
                 else if(!ckbox3.isChecked()){
                     ckbox3.setChecked(true);
-                    type.put("disease",true);
+                    ds=true;
                 }
             }
         });
 
-        Log.i("example", String.valueOf(type));
         next= (Button) findViewById(R.id.next);
         next.setOnClickListener(new View.OnClickListener(){
 
             @Override
             public void onClick(View v) {
-                Log.i("sasang", String.valueOf(type.get("sasang")));
-                Log.i("inbody", String.valueOf(type.get("inbody")));
-                Intent intent = new Intent(getApplicationContext(),Sasang_result.class);
-                intent.putExtra("type",type);
-                if (type.get("sasang")==true){
-                    Intent intent_1 = new Intent(getApplicationContext(),Survey_1.class);
-                    startActivity(intent_1);
-                    overridePendingTransition(0,0);
-                }
-                else if(type.get("inbody")==true){
-                    Intent intent_1= new Intent(getApplicationContext(),inbody_survey1.class);
-                    intent.putExtra("type",type);
-                    startActivity(intent_1);
-                    overridePendingTransition(0,0);
-                }
-                else if(type.get("disease")==true){
 
+                if (ss==true){
+                    Intent intent = new Intent(getApplicationContext(),Survey_1.class);
+                    startActivity(intent);
+                    overridePendingTransition(0,0);
+                }
+                else if(ib==true){
+                    Intent intent = new Intent(getApplicationContext(),inbody_survey1.class);
+                    startActivity(intent);
+                    overridePendingTransition(0,0);
+                }
+                else if(ds==true){
+                    Intent intent = new Intent(getApplicationContext(),inbody_survey1.class);
+                    startActivity(intent);
+                    overridePendingTransition(0,0);
                 }
             }
         });
-
-
-        Log.i("example", String.valueOf(type));
 
     }
 }

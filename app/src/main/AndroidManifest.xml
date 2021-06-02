@@ -26,25 +26,38 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".choose" />
-        <activity android:name=".Sasang_Survey.sex_Survey" />
-        <activity android:name=".Sasang_Survey.Survey_1" />
-        <activity android:name=".Sasang_Survey.Survey_2" />
-        <activity android:name=".Sasang_Survey.Survey_3" />
-        <activity android:name=".Sasang_Survey.Survey_4" />
-        <activity android:name=".Sasang_Survey.Survey_5" />
-        <activity android:name=".Sasang_Survey.Survey_6" />
-        <activity android:name=".Sasang_Survey.Survey_7" />
-        <activity android:name=".Sasang_Survey.Survey_8" />
-        <activity android:name=".Sasang_Survey.Survey_9" />
-        <activity android:name=".Sasang_Survey.Survey_10" />
-        <activity android:name=".Sasang_Survey.Survey_11" />
-        <activity android:name=".Sasang_Survey.Survey_12" />
-        <activity android:name=".Sasang_Survey.Survey_13" />
-        <activity android:name=".Sasang_Survey.Survey_14" />
+        <activity android:name=".choose" android:parentActivityName=".login"/>
+        <activity android:name=".Sasang_Survey.sex_Survey" android:parentActivityName=".login" />
+        <activity android:name=".Sasang_Survey.Survey_1" android:parentActivityName=".login"/>
+        <activity android:name=".Sasang_Survey.Survey_2" android:parentActivityName=".login"/>
+        <activity android:name=".Sasang_Survey.Survey_3" android:parentActivityName=".login"/>
+        <activity android:name=".Sasang_Survey.Survey_4" android:parentActivityName=".login"/>
+        <activity android:name=".Sasang_Survey.Survey_5" android:parentActivityName=".login"/>
+        <activity android:name=".Sasang_Survey.Survey_6" android:parentActivityName=".login"/>
+        <activity android:name=".Sasang_Survey.Survey_7" android:parentActivityName=".login"/>
+        <activity android:name=".Sasang_Survey.Survey_8" android:parentActivityName=".login"/>
+        <activity android:name=".Sasang_Survey.Survey_9" android:parentActivityName=".login"/>
+        <activity android:name=".Sasang_Survey.Survey_10" android:parentActivityName=".login"/>
+        <activity android:name=".Sasang_Survey.Survey_11" android:parentActivityName=".login"/>
+        <activity android:name=".Sasang_Survey.Survey_12" android:parentActivityName=".login"/>
+        <activity android:name=".Sasang_Survey.Survey_13" android:parentActivityName=".login"/>
+        <activity android:name=".Sasang_Survey.Survey_14" android:parentActivityName=".login"/>
         <activity android:name=".Sasang_result" />
-        <activity android:name=".Inbody.inbody_survey1" />
-        <activity android:name=".Inbody.inbody_survey2"/>
+        <activity android:name=".Inbody.inbody_survey1" android:parentActivityName=".login"/>
+        <activity android:name=".Inbody.inbody_survey2" android:parentActivityName=".login"/>
+        <activity android:name=".Inbody.inbody_survey3"/>
+        <activity android:name=".Inbody.inbody_survey4"/>
+        <activity android:name=".Inbody.inbody_survey5"/>
+        <activity android:name=".Inbody.inbody_survey6"/>
+        <activity android:name=".Inbody.inbody_survey7"/>
+        <activity android:name=".Inbody.inbody_survey8"/>
+        <activity android:name=".Inbody.inbody_survey9"/>
+        <activity android:name=".Inbody.inbody_survey10"/>
+        <activity android:name=".Inbody.inbody_survey11"/>
+        <activity android:name=".Inbody.inbody_survey12"/>
+        <activity android:name=".Inbody.inbody_survey13"/>
+        <activity android:name=".Inbody.inbody_survey14"/>
+
     </application>
 
 </manifest>
