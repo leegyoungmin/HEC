@@ -1,87 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    tools:context=".login">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="16dp"
-        android:background="#00000000"
-        android:src="@drawable/logo_design" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hg_main_70"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.70" />
 
-        <com.google.android.gms.common.SignInButton
-            android:id="@+id/google_btn"
-            android:layout_width="200dp"
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/hg_main_95"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.95" />
+
+    <LinearLayout
+        android:id="@+id/layout_login_btn_group"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/hg_main_95"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/hg_main_70">
+
+        <Button
+            android:id="@+id/btn_kakao_login"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:clickable="true"
-            android:visibility="visible" />
-    </RelativeLayout>
+            android:layout_marginBottom="6dp"
+            android:layout_weight="1"
+            android:text="카카오 로그인" />
 
-    <EditText
-        android:id="@+id/et_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center|center_horizontal"
-        android:ems="10"
-        android:hint="이메일을 입력하세요"
-        android:inputType="textEmailAddress"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btn_naver_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:layout_weight="1"
+            android:text="네이버 로그인" />
 
-    <EditText
-        android:id="@+id/et_pwd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:ems="10"
-        android:hint="비밀번호를 입력하세요"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:id="@+id/btn_google_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:layout_weight="1"
+            android:text="구글 로그인" />
 
-    <Button
-        android:id="@+id/login"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:layout_gravity="center"
-        android:background="@drawable/sky"
-        android:text="login"
-        android:textSize="20dp"
-         />
+    </LinearLayout>
 
-    <Button
-        android:id="@+id/forgot_pwd"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
-        android:text="비밀번호를 잊으셨나요?"
-        android:textSize="20dp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="gone">
 
-    <Button
-        android:id="@+id/btn_register"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
-        android:text="회원가입"
-        android:textSize="20dp" />
+        <com.kakao.usermgmt.LoginButton
+            android:id="@+id/btn_kakao_login_basic"
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
 
 
-</LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

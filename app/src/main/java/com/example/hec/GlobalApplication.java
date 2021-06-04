@@ -11,7 +11,11 @@ import com.kakao.auth.ISessionConfig;
 import com.kakao.auth.KakaoAdapter;
 import com.kakao.auth.KakaoSDK;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class GlobalApplication extends Application {
+    private static List<String> mGlobalUserLoginInfo = new ArrayList<>();
     private static GlobalApplication instance;
 
     @Override
@@ -35,7 +39,12 @@ public class GlobalApplication extends Application {
         }
         return instance;
     }
-
+    public static List<String> getGlobalUserLoginInfo() {
+        return mGlobalUserLoginInfo;
+    }
+    public static void setGlobalUserLoginInfo(List<String> userLoginInfo) {
+        mGlobalUserLoginInfo = userLoginInfo;
+    }
     public class KakaoSDKAdapter extends KakaoAdapter {
 
         @Override

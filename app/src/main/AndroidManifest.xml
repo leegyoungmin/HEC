@@ -2,11 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.hec">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
-
     <application
+        android:name=".GlobalApplication"
         android:allowBackup="true"
         android:appComponentFactory="whateverString"
         android:icon="@mipmap/ic_launcher"
@@ -14,43 +15,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
-        tools:replace="android:appComponentFactory"
         android:usesCleartextTraffic="true"
-        android:name=".GlobalApplication">
+        tools:replace="android:appComponentFactory">
 
-        <activity
-            android:name=".Kakao_login"
-            android:label="@string/app_name"
-            android:screenOrientation="fullSensor">
+
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="091e7f33fbec7ec5da8b966b4e68398f" />
+        <activity android:name=".SecondActivity"></activity>
+        <activity android:name=".KakaoLogin"/>
+        <activity android:name=".GoogleLogin" />
+        <activity android:name=".sign_up" />
+        <activity android:name=".choose" />
+        <activity android:name=".login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <meta-data
-            android:name="com.kakao.sdk.AppKey"
-            android:value="091e7f33fbec7ec5da8b966b4e68398f"/>
-        <activity android:name=".sign_up" />
-        <activity android:name=".choose" />
-        <activity android:name=".Sasang_Survey.sex_Survey" />
-        <activity android:name=".Sasang_Survey.Survey_1" />
-        <activity android:name=".Sasang_Survey.Survey_2" />
-        <activity android:name=".Sasang_Survey.Survey_3" />
-        <activity android:name=".Sasang_Survey.Survey_4" />
-        <activity android:name=".Sasang_Survey.Survey_5" />
-        <activity android:name=".Sasang_Survey.Survey_6" />
-        <activity android:name=".Sasang_Survey.Survey_7" />
-        <activity android:name=".Sasang_Survey.Survey_8" />
-        <activity android:name=".Sasang_Survey.Survey_9" />
-        <activity android:name=".Sasang_Survey.Survey_10" />
-        <activity android:name=".Sasang_Survey.Survey_11" />
-        <activity android:name=".Sasang_Survey.Survey_12" />
-        <activity android:name=".Sasang_Survey.Survey_13" />
-        <activity android:name=".Sasang_Survey.Survey_14" />
-        <activity android:name=".Sasang_result" />
-        <activity android:name=".Inbody.inbody_survey1" />
-        <activity android:name=".Inbody.inbody_survey2" />
+
     </application>
 
 </manifest>
