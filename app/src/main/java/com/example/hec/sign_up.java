@@ -51,7 +51,7 @@ public class sign_up extends AppCompatActivity {
                     public void onComplete(@NonNull @NotNull Task<AuthResult> task) {
                         if(task.isSuccessful()){
                             FirebaseUser firebaseUser=mFirebaseAuth.getCurrentUser();
-                            UserAccount account=new UserAccount();
+                            Google_UserAccount account=new Google_UserAccount();
                             account.setIdTokwn(firebaseUser.getUid());
                             account.setEmailId(firebaseUser.getEmail());
                             account.setPassword(strPwd);

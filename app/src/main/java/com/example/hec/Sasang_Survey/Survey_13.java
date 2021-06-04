@@ -72,7 +72,6 @@ public class Survey_13 extends AppCompatActivity {
                 btn_3.setSelected(false);
                 next.setVisibility(View.VISIBLE);
                 next.setClickable(true);
-                value=1;
                 break;
             case R.id.btn_2:
                 value=2;
