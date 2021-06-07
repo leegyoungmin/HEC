@@ -1,5 +1,6 @@
 package com.example.hec;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -9,6 +10,13 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +25,8 @@ public class SecondActivity extends AppCompatActivity {
     private TextView tvSecondUserID, tvSecondNickname;
     private Button btnSecondLogout, btnSecondResign;
     private List<String> userInfo = new ArrayList<>();
-
+    private FirebaseAuth mFirebaseAuth; //파이어베이스 인증
+    private DatabaseReference mDatabaseRef; //실시간 데이터 베이스
     Button.OnClickListener mLogoutListener = new Button.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -42,7 +51,6 @@ public class SecondActivity extends AppCompatActivity {
         btnSecondResign = findViewById(R.id.btn_second_resign);
 
         initView();
-
         btnSecondLogout.setOnClickListener(mLogoutListener);
         btnSecondResign.setOnClickListener(mResignListener);
 
@@ -53,6 +61,9 @@ public class SecondActivity extends AppCompatActivity {
         userInfo = mGlobalHelper.getGlobalUserLoginInfo();
         tvSecondUserID.setText("UserId : " + userInfo.get(0));
         tvSecondNickname.setText("Nickname : " + userInfo.get(1));
+
+
+
     }
 
     public void directToMainActivity(Boolean result) {

@@ -2,9 +2,16 @@ package com.example.hec;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.widget.Toast;
 
+import androidx.annotation.Nullable;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import com.kakao.auth.ISessionCallback;
+import com.kakao.auth.Session;
 import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.MeV2ResponseCallback;
@@ -16,6 +23,7 @@ import java.util.List;
 
 public class KakaoLogin extends Activity {
 
+    private DatabaseReference mDatabaseRef;
     public static class KakaoSessionCallback implements ISessionCallback {
         private Context mContext;
         private login login;
@@ -37,6 +45,9 @@ public class KakaoLogin extends Activity {
 
         protected void requestMe() {
             UserManagement.getInstance().me(new MeV2ResponseCallback() {
+                public FirebaseAuth mFirebaseAuth;
+                private DatabaseReference mDatabaseRef;
+
                 @Override
                 public void onSessionClosed(ErrorResult errorResult) {
                     login.directToSecondActivity(false);
@@ -47,12 +58,18 @@ public class KakaoLogin extends Activity {
                     List<String> userInfo = new ArrayList<>();
                     userInfo.add(String.valueOf(result.getId()));
                     userInfo.add(result.getKakaoAccount().getProfile().getNickname());
+                    userInfo.add(result.getKakaoAccount().getBirthday());
+                    userInfo.add(result.getKakaoAccount().getEmail());
                     GlobalApplication mGlobalHelper = new GlobalApplication();
-                    mGlobalHelper.setGlobalUserLoginInfo(userInfo);
 
+                    mGlobalHelper.setGlobalUserLoginInfo(userInfo);
+                    mFirebaseAuth=FirebaseAuth.getInstance();
+                    mDatabaseRef= FirebaseDatabase.getInstance().getReference("HEC");
+                    mDatabaseRef.child("UserAccount").setValue(userInfo);
                     login.directToSecondActivity(true);
                 }
             });
         }
+
     }
 }

@@ -31,7 +31,9 @@ import com.google.firebase.auth.GoogleAuthProvider;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.kakao.auth.Session;
+import com.kakao.sdk.user.UserApiClient;
 import com.kakao.usermgmt.LoginButton;
+import com.kakao.usermgmt.response.model.User;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -70,6 +72,7 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mKakaoLoginBtnBasic.performClick();
+
             }
         });
 
@@ -98,6 +101,7 @@ public class login extends AppCompatActivity {
         // 세션 콜백 삭제
         Session.getCurrentSession().removeCallback(sessionCallback);
     }
+
 
     private boolean HasKakaoSession() {
         if (!Session.getCurrentSession().checkAndImplicitOpen()) {
